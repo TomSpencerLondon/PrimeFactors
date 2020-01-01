@@ -1,16 +1,14 @@
 class PrimeFactors {
   of(n){
     let factors = []
-    if(n > 1){
-      while(n % 2 == 0){
-        factors.push(2);
-        n /= 2;
+    let divisor = 2;
+    while(n > 1){
+      while(n % divisor == 0){
+        factors.push(divisor);
+        n /= divisor;
       }
+      divisor++;
     }
-    if(n > 1){
-      factors.push(n);
-    }
-
     return factors;
   }
 }
